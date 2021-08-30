@@ -41,7 +41,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:cornerRadius="24dp" />
+            app:cornerRadius="16dp" />
     </LinearLayout>
 
     <LinearLayout

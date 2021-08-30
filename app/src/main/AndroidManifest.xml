@@ -30,7 +30,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC0ZnuP66As2h-A1dXpFHbQAmur-WklwYg" />
-
+        <activity
+            android:name=".ui.user.UserMainActivity"
+            android:exported="true"/>
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="true">
