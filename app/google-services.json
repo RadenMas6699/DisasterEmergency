@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1007445436061",
+    "project_id": "disaster-emergency",
+    "storage_bucket": "disaster-emergency.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007445436061:android:231e471052ef2367899674",
+        "android_client_info": {
+          "package_name": "com.radenmas.disaster_emergency"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007445436061-vt0sd5i2g2k1igklv7tn90eabeo0foo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsLyPFFy9Cl1a--3tR3ay5f3WhGmdK5uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007445436061-vt0sd5i2g2k1igklv7tn90eabeo0foo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

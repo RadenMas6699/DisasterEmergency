@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="32dp"
+    android:paddingVertical="12dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profil_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/img_profil_user" />
+
+    <TextView
+        android:id="@+id/name_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toStartOf="@id/time_user"
+        android:layout_toEndOf="@id/profil_user"
+        android:lines="1"
+        android:text="Korban 1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/chat_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_user"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/profil_user"
+        android:lines="1"
+        android:text="Help me please !"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/time_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:lines="1"
+        android:text="09:00 AM"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="12sp" />
+</RelativeLayout>
