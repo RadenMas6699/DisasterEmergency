@@ -19,7 +19,6 @@ public class AuthFragment extends Fragment {
     private TextView tvRegister;
 
     public AuthFragment() {
-        // Required empty public constructor
     }
 
     @Override

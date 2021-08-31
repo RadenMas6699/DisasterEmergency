@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/menu_welcome"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_icon_dashboard"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Konfirmasi"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_confirm" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_icon_dashboard"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Panduan"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_panduan" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_icon_dashboard"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Tombol Panik"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_btn_panic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_icon_dashboard"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Lokasi"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_map" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_icon_dashboard"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:text="Aktivasi"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_activation" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="8dp"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

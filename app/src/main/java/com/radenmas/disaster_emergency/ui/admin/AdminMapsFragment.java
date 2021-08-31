@@ -1,4 +1,4 @@
-package com.radenmas.disaster_emergency.ui.admin.main;
+package com.radenmas.disaster_emergency.ui.admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,7 +43,7 @@ public class AdminMapsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frag_admin_maps, container, false);
+        return inflater.inflate(R.layout.frag_maps, container, false);
     }
 
     @Override

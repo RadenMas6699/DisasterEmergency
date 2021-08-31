@@ -1,13 +1,12 @@
 package com.radenmas.disaster_emergency.ui.user;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
 
 public class UserMainActivity extends AppCompatActivity {
@@ -19,6 +18,9 @@ public class UserMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_user_main);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
+        myRef.setValue("Hello, World!");
     }
 }

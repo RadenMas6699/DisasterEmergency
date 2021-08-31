@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.ui.user.UserMainActivity;
 
@@ -19,6 +21,11 @@ public class AuthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_auth);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
 
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
         if (fAuth.getCurrentUser() != null) {

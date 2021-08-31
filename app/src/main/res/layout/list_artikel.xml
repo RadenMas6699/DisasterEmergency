@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="32dp"
+    android:layout_marginHorizontal="16dp"
     android:layout_marginTop="8dp"
     android:background="@drawable/bg_icon_dashboard"
     app:cardCornerRadius="16dp">
@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="24dp">
+        android:paddingTop="16dp"
+        android:paddingBottom="22dp">
 
         <TextView
             android:id="@+id/title_berita"
@@ -20,8 +21,8 @@
             android:layout_height="wrap_content"
             android:background="@color/navy_light"
             android:gravity="center"
-            android:paddingVertical="5dp"
-            android:text="Sumatera"
+            android:lines="1"
+            android:paddingVertical="4dp"
             android:textColor="@color/white" />
 
         <TextView
@@ -31,8 +32,6 @@
             android:layout_below="@id/title_berita"
             android:layout_marginTop="8dp"
             android:layout_toStartOf="@id/img_berita"
-            android:text="BNPB: Tapanuli Selatan Memiliki
-Potensi Bahaya Tanah Longsor ..."
             android:textColor="@color/black" />
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -40,8 +39,7 @@ Potensi Bahaya Tanah Longsor ..."
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/img_profil_user" />
+            android:layout_centerVertical="true" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

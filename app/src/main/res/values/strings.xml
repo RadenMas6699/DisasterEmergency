@@ -17,4 +17,12 @@
     <string name="phone">Phone</string>
     <string name="date">Date</string>
     <string name="login_as">Login as</string>
+    <string name="berita_terbaru">Berita terbaru</string>
+    <string name="lihat_lainnya">Lihat lainnya</string>
+    <string name="obrolan">Obrolan</string>
+    <string name="artikel">Artikel</string>
+    <string name="panduan">Panduan</string>
+    <string name="notifikasi_darurat">Notifikasi Darurat</string>
+    <string name="laporan">Laporan</string>
+    <string name="date_of_birth">Date of Birth</string>
 </resources>
