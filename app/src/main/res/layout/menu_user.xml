@@ -14,6 +14,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_user_confirm"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -28,6 +29,7 @@
             app:drawableTopCompat="@drawable/ic_confirm" />
 
         <TextView
+            android:id="@+id/tv_user_panduan"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="16dp"
@@ -43,6 +45,7 @@
             app:drawableTopCompat="@drawable/ic_panduan" />
 
         <TextView
+            android:id="@+id/tv_user_panic"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -64,6 +67,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_user_maps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -78,6 +82,7 @@
             app:drawableTopCompat="@drawable/ic_map" />
 
         <TextView
+            android:id="@+id/tv_user_activation"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="16dp"

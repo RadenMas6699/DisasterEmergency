@@ -33,14 +33,17 @@
             android:value="AIzaSyC0ZnuP66As2h-A1dXpFHbQAmur-WklwYg" />
 
         <activity
+            android:name=".ui.user.UserSubmainActivity"
+            android:exported="true"/>
+        <activity
             android:name=".ui.user.UserMainActivity"
-            android:exported="true">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
-
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
-        </activity>
+            android:exported="true"/>
+        <activity
+            android:name=".ui.admin.submain.AdminSubmainActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.admin.main.AdminMainActivity"
+            android:exported="true"/>
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="true">

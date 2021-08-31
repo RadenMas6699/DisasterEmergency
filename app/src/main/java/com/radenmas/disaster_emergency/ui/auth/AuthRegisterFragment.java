@@ -116,9 +116,9 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
         userInfo.put("phone", prefix);
         userInfo.put("born", strBorn);
         userInfo.put("id", uid);
-        userInfo.put("role", "User");
+        userInfo.put("role", "Admin");
 
-        dbReff.child("User").child(uid).setValue(userInfo).addOnSuccessListener(unused -> {
+        dbReff.child("Admin").child(uid).setValue(userInfo).addOnSuccessListener(unused -> {
             Toast.makeText(getContext(), "Registrasi Success", Toast.LENGTH_SHORT).show();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();

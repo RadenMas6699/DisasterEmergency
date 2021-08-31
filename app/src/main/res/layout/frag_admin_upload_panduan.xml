@@ -39,44 +39,28 @@
 
 
     <TextView
+        style="@style/TitleEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Judul Panduan"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:text="Judul Panduan" />
 
     <EditText
+        style="@style/EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_circle_gray_light"
-        android:hint="Ketik judul"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp" />
+        android:hint="Ketik judul" />
 
     <TextView
+        style="@style/TitleEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Isi Panduan"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:text="Isi Panduan" />
 
     <EditText
+        style="@style/EditTextLong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_circle_gray_light"
-        android:gravity="top|start"
-        android:hint="Ketik isi panduan"
-        android:lines="9"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp" />
+        android:hint="Ketik isi panduan" />
 
     <RelativeLayout
         android:layout_width="42dp"

@@ -37,102 +37,97 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Judul Artikel"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_circle_gray_light"
-        android:hint="Ketik judul"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Kategori"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_circle_gray_light"
-        android:hint="Ketik kategori"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp" />
+            <TextView
+                style="@style/TitleEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Artikel" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Isi Artikel"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_circle_gray_light"
-        android:gravity="top|start"
-        android:hint="Ketik isi panduan"
-        android:lines="9"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/bg_circle_navy_light">
-
-            <ImageView
+            <EditText
+                android:id="@+id/et_title_artikel"
+                style="@style/EditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:src="@drawable/ic_camera"
-                app:tint="@color/white" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:hint="Ketik judul" />
 
-        <RelativeLayout
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_gravity="end"
-            android:background="@drawable/bg_circle_navy_light">
+            <TextView
+                style="@style/TitleEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/et_category_artikel"
+                style="@style/EditText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="12dp"
-                android:src="@drawable/ic_right_arrow"
-                app:tint="@color/white" />
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_height="wrap_content"
+                android:hint="Ketik kategori" />
+
+            <TextView
+                style="@style/TitleEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Isi Artikel" />
+
+            <EditText
+                android:id="@+id/et_isi_artikel"
+                style="@style/EditTextLong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ketik isi panduan" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_circle_navy_light">
+
+                    <ImageView
+                        android:id="@+id/img_artikel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_camera"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_circle_navy_light">
+
+                    <ImageView
+                        android:id="@+id/img_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_right_arrow"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

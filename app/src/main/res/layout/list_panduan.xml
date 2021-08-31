@@ -5,17 +5,16 @@
     android:paddingTop="12dp">
 
     <TextView
-        android:id="@+id/title_panduan"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="12dp"
-        android:text="Mitigasi bencana gempa bumi" />
+        android:layout_marginBottom="12dp" />
 
     <ImageView
-        android:id="@+id/img_delete_panduan"
+        android:id="@+id/images"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentEnd="true"
@@ -28,7 +27,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/title_panduan"
+        android:layout_below="@id/title"
         android:background="@color/gray_light" />
 
 </RelativeLayout>

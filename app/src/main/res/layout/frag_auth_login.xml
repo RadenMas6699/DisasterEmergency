@@ -15,7 +15,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
         android:orientation="vertical">
 
         <ImageView
@@ -23,14 +22,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="56dp"
+            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_user"
             app:tint="@color/red" />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@color/gray_light">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/et_email"
@@ -38,30 +37,28 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:paddingHorizontal="12dp" />
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/gray_light"
             app:endIconMode="password_toggle">
 
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:background="@null"
                 android:hint="@string/password"
-                android:inputType="textPassword"
-                android:paddingHorizontal="12dp" />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="16dp"
             android:text="@string/login_as"
             android:textColor="@color/black" />
@@ -69,6 +66,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -89,6 +87,7 @@
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/red"
             android:paddingHorizontal="32dp"

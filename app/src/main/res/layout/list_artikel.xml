@@ -16,7 +16,7 @@
         android:paddingBottom="22dp">
 
         <TextView
-            android:id="@+id/title_berita"
+            android:id="@+id/title"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@color/navy_light"
@@ -26,16 +26,17 @@
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/desc_berita"
-            android:layout_width="wrap_content"
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/title_berita"
+            android:layout_below="@id/title"
             android:layout_marginTop="8dp"
-            android:layout_toStartOf="@id/img_berita"
+            android:layout_toStartOf="@id/images"
+            android:gravity="start"
             android:textColor="@color/black" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_berita"
+            android:id="@+id/images"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"
