@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.radenmas.disaster_emergency">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -34,16 +34,16 @@
 
         <activity
             android:name=".ui.user.UserSubmainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.user.UserMainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.admin.submain.AdminSubmainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.admin.main.AdminMainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.auth.AuthActivity"
             android:exported="true">

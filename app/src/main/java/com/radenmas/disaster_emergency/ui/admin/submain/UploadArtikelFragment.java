@@ -1,5 +1,6 @@
 package com.radenmas.disaster_emergency.ui.admin.submain;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +10,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
+import com.radenmas.disaster_emergency.adapter.DataRecycler;
+import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
 import com.radenmas.disaster_emergency.ui.auth.AuthLoginFragment;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +35,6 @@ public class UploadArtikelFragment extends Fragment {
     private EditText etTitleArtikel, etCategoryArtikel, etIsiArtikel;
     private String strTitle, strCategory, strIsi;
     private DatabaseReference dbReff;
-    private FirebaseAuth auth;
-    private FirebaseUser user;
 
     public UploadArtikelFragment() {
     }
@@ -41,7 +46,6 @@ public class UploadArtikelFragment extends Fragment {
         View view = inflater.inflate(R.layout.frag_admin_upload_artikel, container, false);
 
         dbReff = FirebaseDatabase.getInstance().getReference();
-        auth = FirebaseAuth.getInstance();
 
         initView(view);
         onClick();
@@ -65,15 +69,14 @@ public class UploadArtikelFragment extends Fragment {
                 strCategory = etCategoryArtikel.getText().toString().trim();
                 strIsi = etIsiArtikel.getText().toString().trim();
 
-                user = FirebaseAuth.getInstance().getCurrentUser();
-                String uid = user.getUid();
+                String uid = dbReff.push().getKey();
 
                 Map<String, Object> dataArtikel = new HashMap<>();
-                dataArtikel.put("email", strTitle);
-                dataArtikel.put("password", strCategory);
-                dataArtikel.put("phone", strIsi);
-                dataArtikel.put("img", "");
-                dataArtikel.put("id", uid);
+                dataArtikel.put("title", strTitle);
+                dataArtikel.put("category", strCategory);
+                dataArtikel.put("isi", strIsi);
+                dataArtikel.put("images", "");
+                dataArtikel.put("uid", uid);
 
                 dbReff.child("Artikel").child(uid).setValue(dataArtikel).addOnSuccessListener(unused -> {
                     Toast.makeText(getContext(), "Artikel Berhasil Diupload", Toast.LENGTH_SHORT).show();

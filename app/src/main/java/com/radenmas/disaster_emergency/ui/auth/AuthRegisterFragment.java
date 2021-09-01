@@ -47,7 +47,7 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.frag_auth_register, container, false);
 
-        dbReff = FirebaseDatabase.getInstance().getReference();
+        dbReff = FirebaseDatabase.getInstance().getReference("Admin");
         auth = FirebaseAuth.getInstance();
 
         etEmail = view.findViewById(R.id.et_email);
@@ -93,14 +93,17 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
         } else if (strBorn.isEmpty()) {
             etDateofBirth.setError("Date of Birth kosong");
         } else {
+            Toast.makeText(getContext(), "Upload User", Toast.LENGTH_SHORT).show();
             auth.createUserWithEmailAndPassword(strEmail, strPassword).addOnSuccessListener(this).addOnFailureListener(this);
         }
     }
 
     @Override
     public void onSuccess(AuthResult authResult) {
+
         user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
+
 
         char preff = strPhone.charAt(0);
         String prefix;
@@ -115,17 +118,17 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
         userInfo.put("password", strPassword);
         userInfo.put("phone", prefix);
         userInfo.put("born", strBorn);
-        userInfo.put("id", uid);
+        userInfo.put("uid", uid);
         userInfo.put("role", "Admin");
 
-        dbReff.child("Admin").child(uid).setValue(userInfo).addOnSuccessListener(unused -> {
+        dbReff.child(uid).setValue(userInfo).addOnSuccessListener(unused -> {
             Toast.makeText(getContext(), "Registrasi Success", Toast.LENGTH_SHORT).show();
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
             AuthLoginFragment fragment = new AuthLoginFragment();
             ft.replace(R.id.content_auth, fragment);
             ft.commit();
-        }).addOnFailureListener(e -> Toast.makeText(getContext(), "Registrasi Failure ", Toast.LENGTH_SHORT).show());
+        }).addOnFailureListener(e -> Toast.makeText(getContext(), "Registrasi Failure", Toast.LENGTH_SHORT).show());
     }
 
     @Override
