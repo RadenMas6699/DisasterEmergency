@@ -53,5 +53,4 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:7.1.1'
 
 
-
 }

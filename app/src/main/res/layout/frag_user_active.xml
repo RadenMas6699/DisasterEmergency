@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/panic_button"
+                android:text="Aktivasi Perangkat"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -36,5 +36,36 @@
                 app:tint="@color/white" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_have_internet"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Jaringan seluler tersedia"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/gray_light"
+            app:cornerRadius="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_no_internet"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Jaringan seluler tersedia"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/red"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
 
 </RelativeLayout>
