@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
@@ -45,41 +46,32 @@ public class AdminMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_admin_main);
 
-        dbReff = FirebaseDatabase.getInstance().getReference("Artikel");
-        dbReff.keepSynced(true);
+        dbReff = FirebaseDatabase.getInstance().getReference().child("Panduan");
+//        dbReff.keepSynced(true);
 
         initView();
         onClick();
 
-
         rvArtikel.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(AdminMainActivity.this);
-        rvArtikel.setLayoutManager(layoutManager);
+        rvArtikel.setLayoutManager(new LinearLayoutManager(AdminMainActivity.this));
 
         options = new FirebaseRecyclerOptions.Builder<DataRecycler>().setQuery(dbReff, DataRecycler.class).build();
+
         adapter = new FirebaseRecyclerAdapter<DataRecycler, FirebaseViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(FirebaseViewHolder firebaseViewHolder, int i, DataRecycler dataArtikel) {
-                firebaseViewHolder.tvTitle.setText(dataArtikel.getCategory());
-                firebaseViewHolder.tvDesc.setText(dataArtikel.getTitle());
-                Picasso.get().load(dataArtikel.getImages()).into(firebaseViewHolder.imgImages);
+            protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull DataRecycler model) {
+                holder.tvTitle.setText(model.getTitle());
             }
 
+            @NonNull
             @Override
-            public FirebaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 return new FirebaseViewHolder(LayoutInflater.from(AdminMainActivity.this).inflate(R.layout.list_artikel, parent, false));
             }
         };
 
         rvArtikel.setAdapter(adapter);
-
-        getDataRecycler();
-
-    }
-
-
-    private void getDataRecycler() {
-
+        adapter.startListening();
     }
 
     @Override

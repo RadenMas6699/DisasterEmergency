@@ -93,8 +93,7 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
         } else if (strBorn.isEmpty()) {
             etDateofBirth.setError("Date of Birth kosong");
         } else {
-            Toast.makeText(getContext(), "Upload User", Toast.LENGTH_SHORT).show();
-            auth.createUserWithEmailAndPassword(strEmail, strPassword).addOnSuccessListener(this).addOnFailureListener(this);
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(strEmail, strPassword).addOnSuccessListener(this).addOnFailureListener(this);
         }
     }
 
@@ -128,11 +127,11 @@ public class AuthRegisterFragment extends Fragment implements OnSuccessListener<
             AuthLoginFragment fragment = new AuthLoginFragment();
             ft.replace(R.id.content_auth, fragment);
             ft.commit();
-        }).addOnFailureListener(e -> Toast.makeText(getContext(), "Registrasi Failure", Toast.LENGTH_SHORT).show());
+        });
     }
 
     @Override
     public void onFailure(@NonNull Exception e) {
-
+        Toast.makeText(getContext(), "Registrasi Failure "+e, Toast.LENGTH_LONG).show();
     }
 }

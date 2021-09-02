@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
+import com.radenmas.disaster_emergency.ui.admin.main.AdminMainActivity;
 import com.radenmas.disaster_emergency.ui.user.UserMainActivity;
 
 public class AuthLoginFragment extends Fragment implements OnSuccessListener<AuthResult>, OnFailureListener {
@@ -90,7 +91,7 @@ public class AuthLoginFragment extends Fragment implements OnSuccessListener<Aut
     public void onSuccess(AuthResult authResult) {
         Toast.makeText(getContext(), "Login Success", Toast.LENGTH_SHORT).show();
 
-        startActivity(new Intent(getContext(), UserMainActivity.class));
+        startActivity(new Intent(getContext(), AdminMainActivity.class));
         getActivity().finish();
     }
 

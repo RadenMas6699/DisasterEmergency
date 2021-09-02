@@ -16,12 +16,14 @@ import com.radenmas.disaster_emergency.ui.user.UserMainActivity;
 
 public class AuthActivity extends AppCompatActivity {
 
-    private FrameLayout contentAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_auth);
+
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+//        myRef.setValue("AAAAAAA");
 
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
         if (fAuth.getCurrentUser() != null) {

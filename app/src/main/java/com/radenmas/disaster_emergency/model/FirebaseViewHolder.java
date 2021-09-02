@@ -16,8 +16,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FirebaseViewHolder extends RecyclerView.ViewHolder {
 
-    public final TextView tvTitle, tvDesc, tvTimestamp;
-    public final CircleImageView imgImages;
+    public final TextView tvTitle, tvDesc, tvTimestamp, titlePanduan;
+    public final CircleImageView imgImages, imagesPanduan;
 
     public FirebaseViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -27,5 +27,7 @@ public class FirebaseViewHolder extends RecyclerView.ViewHolder {
         imgImages = itemView.findViewById(R.id.images);
         tvTimestamp = itemView.findViewById(R.id.timestamp);
 
+        titlePanduan = itemView.findViewById(R.id.title);
+        imagesPanduan = itemView.findViewById(R.id.images);
     }
 }
