@@ -23,7 +23,10 @@ import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
 import com.radenmas.disaster_emergency.ui.admin.main.AdminMainActivity;
 import com.radenmas.disaster_emergency.ui.admin.submain.AdminSubmainActivity;
+import com.radenmas.disaster_emergency.ui.user.submain.ChangePasswordFragment;
 import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserMainActivity extends AppCompatActivity {
     private DatabaseReference dbReff;
@@ -33,6 +36,7 @@ public class UserMainActivity extends AppCompatActivity {
     private TextView tvNameUser, tvRoleUser, tvWelcomeUser,
             tvUserConfirm, tvUserPanduan, tvUserPanic, tvUserMaps, tvUserActivation;
     private RecyclerView rvArtikel;
+    private CircleImageView imgProfil;
     String username = "Raden Mas Dev";
 
     @Override
@@ -82,6 +86,11 @@ public class UserMainActivity extends AppCompatActivity {
     }
 
     private void onClick() {
+        imgProfil.setOnClickListener(view -> {
+            Intent subMain = new Intent(UserMainActivity.this, UserSubmainActivity.class);
+            subMain.putExtra("submain", "changepass");
+            startActivity(subMain);
+        });
         tvUserConfirm.setOnClickListener(view -> {
             Intent subMain = new Intent(UserMainActivity.this, PairBluetoothActivity.class);
 //            subMain.putExtra("submain", "confirm");
@@ -114,6 +123,7 @@ public class UserMainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        imgProfil = findViewById(R.id.img_profil_user);
         tvNameUser = findViewById(R.id.name_user);
         tvRoleUser = findViewById(R.id.role_user);
         tvWelcomeUser = findViewById(R.id.tv_welcome_user);

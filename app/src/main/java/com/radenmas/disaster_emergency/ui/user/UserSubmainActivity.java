@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.ui.user.submain.ActiveFragment;
+import com.radenmas.disaster_emergency.ui.user.submain.ChangePasswordFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ConfirmFragment;
 import com.radenmas.disaster_emergency.ui.admin.submain.MapsFragment;
 import com.radenmas.disaster_emergency.ui.admin.submain.PanduanFragment;
@@ -24,9 +25,9 @@ public class UserSubmainActivity extends AppCompatActivity {
         Fragment contentSubmain = null;
 
         switch (submain) {
-//            case "confirm":
-//                contentSubmain = new ConfirmFragment();
-//                break;
+            case "changepass":
+                contentSubmain = new ChangePasswordFragment();
+                break;
             case "panduan":
                 contentSubmain = new PanduanFragment();
                 break;
