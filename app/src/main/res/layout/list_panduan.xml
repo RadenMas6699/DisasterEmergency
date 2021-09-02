@@ -2,26 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="12dp">
+    android:gravity="center_vertical">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:id="@+id/titlePanduan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="12dp"
-        android:layout_toStartOf="@id/images"
-        android:gravity="start" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <ImageView
-        android:id="@+id/images"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:id="@+id/imagesPanduan"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/bg_circle_gray_light"
         android:padding="2dp"
         android:src="@drawable/ic_close" />
@@ -29,7 +31,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/title"
+        android:layout_below="@id/titlePanduan"
         android:background="@color/gray_light" />
-
 </RelativeLayout>

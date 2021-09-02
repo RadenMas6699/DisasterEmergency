@@ -1,6 +1,5 @@
 package com.radenmas.disaster_emergency.ui.admin.submain;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
-import com.radenmas.disaster_emergency.ui.admin.main.AdminMainActivity;
 
 public class PanduanFragment extends Fragment {
     private ImageView imgAddPanduan;
@@ -38,8 +36,7 @@ public class PanduanFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.frag_admin_panduan, container, false);
 
-        dbReff = FirebaseDatabase.getInstance().getReference().child("Panduan");;
-//        dbReff.keepSynced(true);
+        dbReff = FirebaseDatabase.getInstance().getReference().child("Panduan");
 
         initView(view);
         onClick();
@@ -53,12 +50,14 @@ public class PanduanFragment extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull DataRecycler model) {
                 holder.titlePanduan.setText(model.getTitle());
+                holder.imagesPanduan.setOnClickListener(view1 -> Toast.makeText(getContext(), "Hapus " + model.getTitle() + " ?", Toast.LENGTH_SHORT).show());
             }
 
             @NonNull
             @Override
             public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new FirebaseViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.list_artikel, parent, false));
+
+                return new FirebaseViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.list_panduan, parent, false));
             }
         };
 

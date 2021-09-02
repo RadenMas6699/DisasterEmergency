@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rl_obrolan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="24dp"
+    android:paddingHorizontal="32dp"
     android:paddingVertical="12dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagesProfil"
         android:layout_width="42dp"
         android:layout_height="42dp"
@@ -21,7 +20,7 @@
         android:layout_toEndOf="@id/imagesProfil"
         android:lines="1"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <TextView
@@ -44,5 +43,5 @@
         android:layout_marginStart="8dp"
         android:lines="1"
         android:textColor="?attr/colorControlNormal"
-        android:textSize="10sp" />
+        android:textSize="12sp" />
 </RelativeLayout>

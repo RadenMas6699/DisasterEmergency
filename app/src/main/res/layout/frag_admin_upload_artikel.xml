@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -90,16 +89,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginVertical="16dp"
                 android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_gravity="end"
                     android:layout_marginEnd="12dp"
-                    android:background="@drawable/bg_circle_navy_light">
+                    android:background="@drawable/bg_circle_navy_light"
+                    android:foreground="?attr/selectableItemBackground">
 
                     <ImageView
                         android:id="@+id/img_artikel"
@@ -111,11 +110,11 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_gravity="end"
-                    android:background="@drawable/bg_circle_navy_light">
+                    android:background="@drawable/bg_circle_navy_light"
+                    android:foreground="?attr/selectableItemBackground">
 
                     <ImageView
                         android:id="@+id/img_upload"

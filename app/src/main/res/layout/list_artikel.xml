@@ -16,27 +16,29 @@
         android:paddingBottom="22dp">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/titleArtikel"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:background="@color/navy_light"
+            android:background="@drawable/bg_circle_navy_light"
             android:gravity="center"
             android:lines="1"
             android:paddingVertical="4dp"
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/desc"
+            android:id="@+id/descArtikel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/title"
+            android:layout_below="@id/titleArtikel"
             android:layout_marginTop="8dp"
-            android:layout_toStartOf="@id/images"
+            android:layout_marginEnd="3dp"
+            android:layout_toStartOf="@id/imagesArtikel"
             android:gravity="start"
+            android:lines="2"
             android:textColor="@color/black" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/images"
+        <ImageView
+            android:id="@+id/imagesArtikel"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_alignParentEnd="true"

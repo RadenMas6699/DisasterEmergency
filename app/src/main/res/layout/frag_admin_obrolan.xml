@@ -15,18 +15,26 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search" />
+
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_search"
-                android:drawablePadding="64dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:background="@android:color/transparent"
+                android:hint="Cari"
                 android:inputType="text" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_obrolan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_chat"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/toolbar"
+        tools:listitem="@layout/list_chat" />
 </RelativeLayout>

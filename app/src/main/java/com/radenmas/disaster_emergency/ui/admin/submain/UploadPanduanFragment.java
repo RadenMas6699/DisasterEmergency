@@ -9,13 +9,10 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
-import com.radenmas.disaster_emergency.ui.auth.AuthLoginFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,7 +57,7 @@ public class UploadPanduanFragment extends Fragment {
                 Toast.makeText(getContext(), "Upload Panduan Success", Toast.LENGTH_SHORT).show();
                 etTitlePanduan.setText("");
                 etIsiPanduan.setText("");
-            });
+            }).addOnFailureListener(e -> Toast.makeText(getContext(), "Upload Panduan Failure", Toast.LENGTH_SHORT).show());
         });
     }
 

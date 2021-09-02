@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.radenmas.disaster_emergency.CircleTransform;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
@@ -46,8 +47,7 @@ public class AdminMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_admin_main);
 
-        dbReff = FirebaseDatabase.getInstance().getReference().child("Panduan");
-//        dbReff.keepSynced(true);
+        dbReff = FirebaseDatabase.getInstance().getReference().child("Artikel");
 
         initView();
         onClick();
@@ -60,18 +60,20 @@ public class AdminMainActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<DataRecycler, FirebaseViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull DataRecycler model) {
-                holder.tvTitle.setText(model.getTitle());
+                holder.titleArtikel.setText(model.getCategory());
+                holder.descArtikel.setText(model.getIsi());
+                Picasso.get().load(model.getImages()).transform(new CircleTransform()).into(holder.imagesArtikel);
             }
 
             @NonNull
             @Override
             public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
                 return new FirebaseViewHolder(LayoutInflater.from(AdminMainActivity.this).inflate(R.layout.list_artikel, parent, false));
             }
         };
 
         rvArtikel.setAdapter(adapter);
-        adapter.startListening();
     }
 
     @Override

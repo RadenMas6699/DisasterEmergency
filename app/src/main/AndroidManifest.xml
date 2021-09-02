@@ -34,19 +34,24 @@
 
         <activity
             android:name=".ui.user.UserSubmainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.user.UserMainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.admin.submain.AdminSubmainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.admin.main.AdminMainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.auth.AuthActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
