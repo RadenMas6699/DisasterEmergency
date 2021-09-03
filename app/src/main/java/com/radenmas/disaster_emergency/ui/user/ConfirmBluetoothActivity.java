@@ -105,7 +105,7 @@ public class ConfirmBluetoothActivity extends AppCompatActivity {
                 //base64 encoding is used
                 encodedImg = Base64.encodeToString(byteFormat, Base64.NO_WRAP);
 
-//                write();
+                write();
 
             } else {
                 Toast.makeText(this.getApplicationContext(), "Picture not taken!", Toast.LENGTH_SHORT).show();
@@ -134,7 +134,6 @@ public class ConfirmBluetoothActivity extends AppCompatActivity {
                 OutputStream out = btSocket.getOutputStream();
                 out.write(tosend);
 
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -147,7 +146,6 @@ public class ConfirmBluetoothActivity extends AppCompatActivity {
         try {
             outputStream = btSocket.getOutputStream();
             outputStream.write((encodedImg + "stop").getBytes());
-
 
         } catch (IOException e) {
             e.printStackTrace();

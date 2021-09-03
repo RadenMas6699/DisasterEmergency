@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.radenmas.disaster_emergency.R;
+import com.radenmas.disaster_emergency.ui.admin.AdminMapsFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ActiveFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ChangePasswordFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ConfirmFragment;
@@ -35,7 +36,7 @@ public class UserSubmainActivity extends AppCompatActivity {
                 contentSubmain = new PanicFragment();
                 break;
             case "maps":
-                contentSubmain = new MapsFragment();
+                contentSubmain = new UserMapsFragment();
                 break;
             case "active":
                 contentSubmain = new ActiveFragment();

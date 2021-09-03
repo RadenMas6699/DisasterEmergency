@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.radenmas.disaster_emergency.R;
+import com.radenmas.disaster_emergency.ui.admin.AdminMapsFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ConfirmFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.PanicFragment;
 
@@ -22,7 +23,7 @@ public class AdminSubmainActivity extends AppCompatActivity {
 
         switch (submain) {
             case "chat":
-                contentSubmain = new ObrolanFragment();
+                contentSubmain = new AdminMapsFragment();
                 break;
             case "artikel":
                 contentSubmain = new UploadArtikelFragment();

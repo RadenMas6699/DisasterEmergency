@@ -48,8 +48,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC0ZnuP66As2h-A1dXpFHbQAmur-WklwYg" />
-
+            android:value="AIzaSyChy1muPb_69lBJL6tQvqkfiEO-gsdVF_c" />
 
         <activity
             android:name=".ui.user.ConfirmBluetoothActivity"
