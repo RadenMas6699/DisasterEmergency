@@ -1,4 +1,4 @@
-package com.radenmas.disaster_emergency.ui.admin.submain;
+package com.radenmas.disaster_emergency.ui.user.submain;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,22 +19,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
+import com.radenmas.disaster_emergency.ui.admin.submain.UploadPanduanFragment;
 
-public class PanduanFragment extends Fragment {
-    private ImageView imgAddPanduan;
+public class UserPanduanFragment extends Fragment {
     private RecyclerView rvPanduan;
     private DatabaseReference dbReff;
     private FirebaseRecyclerOptions<DataRecycler> options;
     private FirebaseRecyclerAdapter<DataRecycler, FirebaseViewHolder> adapter;
 
-    public PanduanFragment() {
+    public UserPanduanFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.frag_admin_panduan, container, false);
+        View view = inflater.inflate(R.layout.frag_user_panduan, container, false);
 
         dbReff = FirebaseDatabase.getInstance().getReference().child("Panduan");
 
@@ -66,6 +66,9 @@ public class PanduanFragment extends Fragment {
         return view;
     }
 
+    private void onClick() {
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -78,15 +81,7 @@ public class PanduanFragment extends Fragment {
         adapter.stopListening();
     }
 
-
-    private void onClick() {
-        imgAddPanduan.setOnClickListener(view -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_submain, new UploadPanduanFragment()).commit();
-        });
-    }
-
     private void initView(View view) {
-        imgAddPanduan = view.findViewById(R.id.img_add_panduan);
         rvPanduan = view.findViewById(R.id.rv_panduan);
     }
 }

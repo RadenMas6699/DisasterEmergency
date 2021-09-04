@@ -7,8 +7,6 @@ import androidx.fragment.app.Fragment;
 
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.ui.admin.AdminMapsFragment;
-import com.radenmas.disaster_emergency.ui.user.submain.ConfirmFragment;
-import com.radenmas.disaster_emergency.ui.user.submain.PanicFragment;
 
 public class AdminSubmainActivity extends AppCompatActivity {
 
@@ -29,7 +27,7 @@ public class AdminSubmainActivity extends AppCompatActivity {
                 contentSubmain = new UploadArtikelFragment();
                 break;
             case "panduan":
-                contentSubmain = new PanduanFragment();
+                contentSubmain = new AdminPanduanFragment();
                 break;
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.content_submain, contentSubmain).commit();
