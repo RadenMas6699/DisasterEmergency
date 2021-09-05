@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButton;
 import com.radenmas.disaster_emergency.R;
 
 import java.util.ArrayList;
@@ -21,16 +21,22 @@ import java.util.Set;
 public class PairBluetoothActivity extends AppCompatActivity {
     ListView PairBluetoothActivity;
 
+    private MaterialButton btnPaired;
+
     private BluetoothAdapter myBluetooth = null;
     private Set<BluetoothDevice> pairedDevices;
     public static String EXTRA_ADDRESS = "device_address";
+    private String submain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_pair_bluetooth);
 
+        submain = getIntent().getExtras().getString("submain");
+
         PairBluetoothActivity = findViewById(R.id.listView);
+        btnPaired = findViewById(R.id.btn_paired_devices);
 
         myBluetooth = BluetoothAdapter.getDefaultAdapter();
 
@@ -43,6 +49,11 @@ public class PairBluetoothActivity extends AppCompatActivity {
         }
 
         pairedDevicesList();
+
+        btnPaired.setOnClickListener(view -> {
+            pairedDevicesList();
+        });
+
     }
 
     private void pairedDevicesList() {
@@ -67,8 +78,18 @@ public class PairBluetoothActivity extends AppCompatActivity {
         String info = ((TextView) v).getText().toString();
         String address = info.substring(info.length() - 17);
 
-        Intent i = new Intent(PairBluetoothActivity.this, ConfirmBluetoothActivity.class);
-        i.putExtra(EXTRA_ADDRESS, address);
-        startActivity(i);
+        switch (submain) {
+            case "confirm":
+                Intent i = new Intent(PairBluetoothActivity.this, ConfirmBluetoothActivity.class);
+                i.putExtra(EXTRA_ADDRESS, address);
+                startActivity(i);
+                break;
+            case "panic":
+                Intent subMain = new Intent(PairBluetoothActivity.this, PanicActivity.class);
+                subMain.putExtra(EXTRA_ADDRESS, address);
+                startActivity(subMain);
+                break;
+        }
+
     };
 }

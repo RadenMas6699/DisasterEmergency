@@ -19,7 +19,7 @@ public class FirebaseViewHolder extends RecyclerView.ViewHolder {
 
     public final TextView titleArtikel, descArtikel, titlePanduan, titleProfil, descChat, timesChat;
     public final ImageView imagesArtikel, imagesPanduan, imagesProfil;
-    public final RelativeLayout rlObrolan;
+    public final RelativeLayout rlObrolan, rlPanduan;
 
     public FirebaseViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -30,6 +30,7 @@ public class FirebaseViewHolder extends RecyclerView.ViewHolder {
         imagesArtikel = itemView.findViewById(R.id.imagesArtikel);
 
         //Panduan
+        rlPanduan = itemView.findViewById(R.id.rlPanduan);
         titlePanduan = itemView.findViewById(R.id.titlePanduan);
         imagesPanduan = itemView.findViewById(R.id.imagesPanduan);
 

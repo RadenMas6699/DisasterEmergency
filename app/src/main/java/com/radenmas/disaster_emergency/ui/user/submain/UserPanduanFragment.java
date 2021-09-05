@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.adapter.DataRecycler;
 import com.radenmas.disaster_emergency.model.FirebaseViewHolder;
-import com.radenmas.disaster_emergency.ui.admin.submain.UploadPanduanFragment;
 
 public class UserPanduanFragment extends Fragment {
     private RecyclerView rvPanduan;
@@ -50,7 +50,19 @@ public class UserPanduanFragment extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull DataRecycler model) {
                 holder.titlePanduan.setText(model.getTitle());
-                holder.imagesPanduan.setOnClickListener(view1 -> Toast.makeText(getContext(), "Hapus " + model.getTitle() + " ?", Toast.LENGTH_SHORT).show());
+                holder.imagesPanduan.setVisibility(View.INVISIBLE);
+                holder.rlPanduan.setOnClickListener(view1 -> {
+                    String uid = model.getUid();
+                    Bundle bundle = new Bundle();
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction();
+                    OpenPanduanFragment fragment = new OpenPanduanFragment();
+
+                    bundle.putString("uid", uid);
+                    fragment.setArguments(bundle);
+                    ft.replace(R.id.content_submain, fragment);
+                    ft.commit();
+                });
             }
 
             @NonNull

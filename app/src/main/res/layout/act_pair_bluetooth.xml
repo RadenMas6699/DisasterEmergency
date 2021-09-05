@@ -22,8 +22,21 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btn_paired_devices"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_paired_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/navy_light"
+        android:text="Paired Devices"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/navy_light"
+        app:cornerRadius="20dp" />
 
 </RelativeLayout>

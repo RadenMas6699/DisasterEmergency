@@ -51,6 +51,11 @@
             android:value="AIzaSyChy1muPb_69lBJL6tQvqkfiEO-gsdVF_c" />
 
         <activity
+            android:name=".ui.user.PanicActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
             android:name=".ui.user.ConfirmBluetoothActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />

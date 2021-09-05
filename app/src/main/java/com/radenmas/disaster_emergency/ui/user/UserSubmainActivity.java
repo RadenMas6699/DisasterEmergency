@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment;
 import com.radenmas.disaster_emergency.R;
 import com.radenmas.disaster_emergency.ui.user.submain.ActiveFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.ChangePasswordFragment;
-import com.radenmas.disaster_emergency.ui.admin.submain.AdminPanduanFragment;
-import com.radenmas.disaster_emergency.ui.user.submain.PanicFragment;
 import com.radenmas.disaster_emergency.ui.user.submain.UserPanduanFragment;
 
 public class UserSubmainActivity extends AppCompatActivity {
@@ -29,9 +27,6 @@ public class UserSubmainActivity extends AppCompatActivity {
                 break;
             case "panduan":
                 contentSubmain = new UserPanduanFragment();
-                break;
-            case "panic":
-                contentSubmain = new PanicFragment();
                 break;
             case "maps":
                 contentSubmain = new UserMapsFragment();

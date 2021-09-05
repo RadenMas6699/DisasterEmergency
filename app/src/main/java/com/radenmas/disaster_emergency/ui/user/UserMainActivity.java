@@ -93,7 +93,7 @@ public class UserMainActivity extends AppCompatActivity {
         });
         tvUserConfirm.setOnClickListener(view -> {
             Intent subMain = new Intent(UserMainActivity.this, PairBluetoothActivity.class);
-//            subMain.putExtra("submain", "confirm");
+            subMain.putExtra("submain", "confirm");
             startActivity(subMain);
         });
 
@@ -104,7 +104,7 @@ public class UserMainActivity extends AppCompatActivity {
         });
 
         tvUserPanic.setOnClickListener(view -> {
-            Intent subMain = new Intent(UserMainActivity.this, UserSubmainActivity.class);
+            Intent subMain = new Intent(UserMainActivity.this, PairBluetoothActivity.class);
             subMain.putExtra("submain", "panic");
             startActivity(subMain);
         });
