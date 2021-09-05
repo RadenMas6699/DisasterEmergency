@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.radenmas.disaster_emergency.R;
 
 public class UserMapsFragment extends Fragment {
@@ -32,9 +38,36 @@ public class UserMapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-5.184407556443631, 119.42990521273074);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("ASKARA"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            DatabaseReference dbLoc = FirebaseDatabase.getInstance().getReference().child("Laporan");
+            dbLoc.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String lat = snapshot.child("Lattitude").getValue().toString();
+                    String lon = snapshot.child("Long").getValue().toString();
+
+//                    String lat = "-5.184407556443631";
+//                    String lon = "119.42990521273074";
+
+                    float lattt = Float.parseFloat(lat);
+                    float longg = Float.parseFloat(lon);
+
+                    LatLng askara = new LatLng(lattt, longg);
+                    float zoomLevel = 14.0f; //This goes up to 21
+                    googleMap.addMarker(new MarkerOptions().position(askara).title("ASKARA"));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(askara, zoomLevel));
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+//            LatLng sydney = new LatLng(-5.184407556443631, 119.42990521273074);
+//            googleMap.addMarker(new MarkerOptions().position(sydney).title("ASKARA"));
+//            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         }
     };
 
