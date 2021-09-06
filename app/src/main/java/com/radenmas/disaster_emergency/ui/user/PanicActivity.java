@@ -91,17 +91,17 @@ public class PanicActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... devices) {
-            try {
-                if (btSocket == null || !isBtConnected) {
-                    myBluetooth = BluetoothAdapter.getDefaultAdapter();
-                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);
-                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);
-                    BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
-                    btSocket.connect();
-                }
-            } catch (IOException e) {
-                ConnectSuccess = false;
-            }
+//            try {
+//                if (btSocket == null || !isBtConnected) {
+//                    myBluetooth = BluetoothAdapter.getDefaultAdapter();
+//                    BluetoothDevice dispositivo = myBluetooth.getRemoteDevice(address);
+//                    btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);
+//                    BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
+//                    btSocket.connect();
+//                }
+//            } catch (IOException e) {
+//                ConnectSuccess = false;
+//            }
             return null;
         }
 

@@ -27,7 +27,7 @@ public class AuthActivity extends AppCompatActivity {
 
         FirebaseAuth fAuth = FirebaseAuth.getInstance();
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(AuthActivity.this, UserMainActivity.class));
+            startActivity(new Intent(AuthActivity.this, AdminMainActivity.class));
             finish();
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_auth, new AuthFragment()).commit();

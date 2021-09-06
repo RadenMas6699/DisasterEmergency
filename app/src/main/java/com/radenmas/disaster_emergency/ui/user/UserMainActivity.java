@@ -104,7 +104,7 @@ public class UserMainActivity extends AppCompatActivity {
         });
 
         tvUserPanic.setOnClickListener(view -> {
-            Intent subMain = new Intent(UserMainActivity.this, PairBluetoothActivity.class);
+            Intent subMain = new Intent(UserMainActivity.this, PanicActivity.class);
             subMain.putExtra("submain", "panic");
             startActivity(subMain);
         });
