@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UploadArtikelFragment extends Fragment {
-    private ImageView imgArtikel, imgUpload;
+    private ImageView imgArtikel, imgUpload, btn_back;
     private EditText etTitleArtikel, etCategoryArtikel, etIsiArtikel;
     private String strTitle, strCategory, strIsi;
     private DatabaseReference dbReff;
